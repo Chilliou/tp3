@@ -45,12 +45,14 @@ public class CryptoMarche {
      * @param monnaie
      * @return capital total en circulation de la cryptomonnaie (en euros).
      */
-    public double capitalMonneaie(Cryptomonnaie monnaie){
-        /**
-			FONCTION À IMPLEMENTER
-        **/
+    public double capitalMonnaie(Cryptomonnaie monnaie){
+        double res=0.0;
+        for(Portefeuille p : portefeuilles)
+            if(p.getMonnaie().equals(monnaie))
+                res += p.valeurEnEuros();
 
-        return 0;
+
+        return res;
 
     }
 
