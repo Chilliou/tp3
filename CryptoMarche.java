@@ -25,11 +25,17 @@ public class CryptoMarche {
      * @return capital en euros du propriétare.
      */
     public double capitalEnEuros(String proprietaire){
-        /**
-			FONCTION À IMPLEMENTER
-        **/
+        double res=0.0;
+        if(proprietaire!= null ||proprietaire.equals("") )
+        {
+            for(Portefeuille p : portefeuilles)
+                if(p.estProprietaire(proprietaire))
+                    res += p.valeurEnEuros();
 
-        return 0;
+            return res;
+                
+        }
+        return res;
     }
 
     /**
