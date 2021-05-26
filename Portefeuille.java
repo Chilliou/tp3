@@ -19,10 +19,14 @@ public class Portefeuille {
    * @return Vrai si la transaction a été effectuée, faux sinon.  
    */
   public boolean transfertDevise (Portefeuille destination, double montantJetons){
-      /**
-           FONCTION À IMPLEMENTER
-	  **/
-      return false;
+      if(this.montant>= montantJetons)
+      {
+        this.montant-montantJetons;
+        destination.montant + montantJetons;
+        return true;
+      }
+      else
+          return false;
   }
 
   /**
